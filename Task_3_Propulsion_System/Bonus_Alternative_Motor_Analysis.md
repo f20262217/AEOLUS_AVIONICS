@@ -55,7 +55,6 @@ Advantages:
 
 - Lightweight
 - Good thrust-to-weight ratio
-- Compatible with existing S675 V2 setup
 - Easy ESC matching
 
 Limitations:
@@ -86,17 +85,9 @@ The lower KV provides:
 - Lower RPM
 - Lower current demand during hover
 
-The motor can support larger propellers such as:
-
-```
-1047
-1070
-1147
-```
-
 which can increase efficiency compared to a smaller propeller setup.
 
-SunnySky X2216 880KV specifications list 3S-4S operation and compatibility with larger propellers such as 11 inch classes. :contentReference[oaicite:2]{index=2}
+SunnySky X2216 880KV specifications list 3S-4S operation and compatibility with larger propellers such as 11 inch classes.
 
 Advantages:
 
