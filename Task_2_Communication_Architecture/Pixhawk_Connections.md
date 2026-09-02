@@ -84,12 +84,12 @@ controllers and ground stations.
 
 Connected to TELEM1 UART port.
 
-  SiK Telemetry Radio   Pixhawk TELEM1
-  --------------------- ----------------
-  TX                    RX
-  RX                    TX
-  5V                    5V
-  GND                   GND
+  SiK Telemetry Radio ->  Pixhawk TELEM1
+  
+        TX            ->        RX
+        RX            ->        TX
+        5V            ->        5V
+        GND           ->        GND
 
 ## Power Source
 
