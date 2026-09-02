@@ -403,6 +403,105 @@ The DJI O3 Air Unit was selected because:
 
 ------------------------------------------------------------------------
 
+# Communication Range Comparison
+
+
+## RC System Range
+
+Selected system:
+
+RadioMaster TX16S + RP3 ExpressLRS Receiver
+
+
+Protocol:
+
+2.4GHz ExpressLRS using CRSF
+
+
+Typical range:
+
+Approximately 10-30 km depending on:
+
+- Antenna orientation
+- Transmitter power
+- Environment
+- Interference
+
+
+For autonomous drone operation, this provides sufficient range for reliable manual override and emergency control.
+
+
+
+---
+
+## Telemetry Range
+
+Selected system:
+
+Holybro SiK Telemetry Radio V3
+
+
+Protocol:
+
+MAVLink over 915MHz/433MHz radio link
+
+
+Typical range:
+
+Approximately 1-3 km for standard modules.
+
+Higher power versions and improved antennas can extend the range further.
+
+
+The range is suitable because telemetry is mainly required for:
+
+- Mission monitoring
+- Parameter updates
+- Flight data transmission
+
+
+
+---
+
+## Video Transmission Range
+
+Selected system:
+
+DJI O3 Air Unit
+
+
+Protocol:
+
+5.8GHz Digital Video Transmission
+
+
+Typical range:
+
+Approximately 10 km maximum under ideal conditions with compatible DJI goggles.
+
+
+Actual range depends on:
+
+- Antenna placement
+- Obstacles
+- Signal interference
+- Regulatory limits
+
+
+The digital video system was selected because HD video quality is more important than extremely low cost for autonomous testing.
+
+
+
+---
+
+# Final Communication Comparison
+
+|System|Component|Protocol|Approximate Range|Purpose|
+|-|-|-|-|-|
+|RC Control|RadioMaster TX16S + RP3 ExpressLRS|CRSF|10-30 km|Pilot control and emergency override|
+|Telemetry|Holybro SiK Telemetry V3|MAVLink|1-3 km|Drone monitoring and mission communication|
+|Video|DJI O3 Air Unit|Digital 5.8GHz Link|Up to 10 km|Live FPV video|
+
 # Final Communication Component Selection
 
   -----------------------------------------------------------------------
