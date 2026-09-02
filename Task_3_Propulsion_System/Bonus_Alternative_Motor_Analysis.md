@@ -115,7 +115,7 @@ Advantages:
 
 Example:
 
-Air Gear propulsion systems use efficiency-focused motor and propeller combinations rather than only maximizing RPM. :contentReference[oaicite:3]{index=3}
+Air Gear propulsion systems use efficiency-focused motor and propeller combinations rather than only maximizing RPM.
 
 Disadvantages:
 
@@ -184,8 +184,6 @@ Disadvantages:
 ---
 
 # 7. Recommended Alternative
-
-For the current S675 V2 platform:
 
 ## Best drop-in alternative:
 
