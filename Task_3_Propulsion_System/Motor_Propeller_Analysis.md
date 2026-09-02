@@ -1,140 +1,154 @@
 # Motor and Propeller Analysis
 
-## Given Components
+## 1. Selected Propulsion Components
 
-The propulsion system is based on:
+The drone uses the following propulsion system:
 
-Motor:
+| Component | Specification |
+|---|---|
+| Motor | Holybro S500 V2 Motor 2216-920KV-CCW |
+| Propeller | 1045 (10×4.5 inch) |
+| Number of Motors | 4 (Quadcopter configuration) |
 
-Holybro S500 V2 Motor 2216-920KV-CCW
-
-Propeller:
-
-1045 Propeller (10×4.5 inch)
-
-
----
-
-# Design Requirement
-
-The drone maximum allowed weight:
-
-\[
-2.5kg
-\]
-
-For a stable quadcopter design, a thrust-to-weight ratio of approximately 2:1 is targeted.
-
-Required total thrust:
-
-\[
-2.5 \times 2
-\]
-
-\[
-=5kg
-\]
-
-Therefore, each motor should provide:
-
-\[
-\frac{5}{4}
-\]
-
-\[
-=1.25kg
-\]
-
-Minimum required thrust per motor:
-
-\[
-\boxed{1250g}
-\]
-
+The selected motor-propeller combination is designed for 10 inch quadcopters and is compatible with a 4S LiPo battery setup.
 
 ---
 
-# Motor Performance
+# 2. Thrust Requirement Calculation
 
-The 2216-920KV motor with a 1045 propeller provides approximately:
+The maximum allowed drone weight is:
+
+**Maximum weight = 2.5 kg**
+
+For stable flight and good maneuverability, the target thrust-to-weight ratio is considered as:
+
+**Thrust-to-weight ratio = 2:1**
+
+Therefore, required total thrust:
+
+```
+Required thrust = Drone weight × Safety factor
+
+Required thrust = 2.5 × 2
+
+Required thrust = 5 kg
+```
+
+Since the drone has four motors:
+
+```
+Required thrust per motor = Total thrust ÷ Number of motors
+
+Required thrust per motor = 5 ÷ 4
+
+Required thrust per motor = 1.25 kg
+```
+
+Therefore, each motor should provide at least:
+
+**Required thrust per motor = 1.25 kg**
+
+---
+
+# 3. Motor Thrust Performance
+
+For the Holybro 2216-920KV motor with a 1045 propeller:
 
 Maximum thrust per motor:
 
-\[
-1367g
-\]
-
+**≈ 1.37 kg**
 
 Total available thrust:
 
-\[
-1367 \times 4
-\]
+```
+Total thrust = Single motor thrust × Number of motors
 
-\[
-=5468g
-\]
+Total thrust = 1.37 × 4
 
+Total thrust = 5.48 kg
+```
 
-Total thrust:
+Therefore:
 
-\[
-\boxed{5.47kg}
-\]
-
+**Available thrust = 5.48 kg**
 
 ---
 
-# Thrust Margin
+# 4. Thrust Margin Check
 
 Required thrust:
 
-\[
-5kg
-\]
-
+**5 kg**
 
 Available thrust:
 
-\[
-5.47kg
-\]
+**5.48 kg**
 
+Extra thrust available:
 
-Margin:
+```
+Thrust margin = Available thrust - Required thrust
 
-\[
-5.47-5
-\]
+Thrust margin = 5.48 - 5
 
+Thrust margin = 0.48 kg
+```
 
-\[
-=0.47kg
-\]
+The thrust-to-weight ratio is:
 
+```
+Thrust-to-weight ratio = Total thrust ÷ Drone weight
 
-Thrust-to-weight ratio:
+Thrust-to-weight ratio = 5.48 ÷ 2.5
 
-\[
-\frac{5.47}{2.5}
-\]
+Thrust-to-weight ratio = 2.19:1
+```
 
+A ratio above 2:1 provides:
 
-\[
-=2.18:1
-\]
-
-
-Therefore, the selected motor and propeller combination satisfies the thrust requirement.
-
+- Stable hovering
+- Better control response
+- Ability to handle additional payload
+- Safer operation during wind disturbances
 
 ---
 
-# Conclusion
+# 5. Motor Current Requirement
 
-The Holybro 2216-920KV motor with 1045 propellers is suitable for the 10 inch quadcopter because:
+The maximum current drawn by one motor with the 1045 propeller is approximately:
 
-- It provides sufficient thrust margin
-- It supports the required drone weight
+**Motor current = 17.4A**
+
+For four motors:
+
+```
+Total motor current = Current per motor × Number of motors
+
+Total motor current = 17.4 × 4
+
+Total motor current = 69.6A
+```
+
+Maximum propulsion current:
+
+**≈ 70A**
+
+This value is used later for ESC and battery selection.
+
+---
+
+# 6. Final Motor and Propeller Selection
+
+The Holybro 2216-920KV motor with 1045 propellers is selected because:
+
+- It provides 5.48 kg total thrust
+- It satisfies the 2:1 thrust requirement
 - It is compatible with a 4S LiPo battery
+- It provides enough margin for autonomous drone payloads
 - It is the recommended propulsion combination for the S500 V2 platform
+
+## Final Selection:
+
+**Motor:** Holybro S500 V2 2216-920KV  
+**Propeller:** 1045 (10×4.5 inch)  
+**Configuration:** 4 motor quadcopter
