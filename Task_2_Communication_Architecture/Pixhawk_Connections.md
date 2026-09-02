@@ -46,7 +46,7 @@ The receiver connects to a Pixhawk UART port.
   ExpressLRS Receiver  ->   Pixhawk 6C Mini
  
             TX         ->         RX
-            RX         ->         TX
+            RX         <-         TX
             5V         ->         5V
             GND        ->         GND
 
