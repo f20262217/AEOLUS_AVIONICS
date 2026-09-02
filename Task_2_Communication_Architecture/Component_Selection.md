@@ -38,42 +38,120 @@ It is responsible for transmitting:
 
 # Communication Technologies Comparison
 
-## PWM
+## PWM (Pulse Width Modulation)
 
-PWM receivers provide individual outputs for each channel.
+PWM represents information by changing the width of an electrical pulse while keeping the signal cycle constant.
+
+In RC systems, the pulse width represents the command value for a channel.
+
+Typical RC PWM values:
+
+- 1000µs pulse width → Minimum command
+- 1500µs pulse width → Neutral position
+- 2000µs pulse width → Maximum command
+
 
 Example:
 
--   Channel 1 → Roll
--   Channel 2 → Pitch
--   Channel 3 → Throttle
--   Channel 4 → Yaw
+Throttle control:
+
+1000µs → Motor off
+
+1500µs → Mid throttle
+
+2000µs → Full throttle
+
 
 Advantages:
 
--   Simple concept
--   Compatible with older flight controllers
+- Simple and easy to decode
+- Compatible with many older RC systems
+- Direct control of individual channels
+
 
 Disadvantages:
 
--   Requires many wires
--   Limited scalability
--   Higher wiring complexity
+- Requires a separate signal wire for every channel
+- Increases wiring complexity
+- Limited scalability for systems requiring many channels
 
-------------------------------------------------------------------------
 
-## PPM
+Example PWM receiver output:
 
-PPM combines multiple channels into a single signal.
+Channel 1 → Roll
+
+Channel 2 → Pitch
+
+Channel 3 → Throttle
+
+Channel 4 → Yaw
+
+
+---
+
+## PPM (Pulse Position Modulation)
+
+PPM represents information by changing the position of pulses in time while keeping the pulse width approximately constant.
+
+Instead of sending each channel through a separate wire, multiple channels are combined into a single signal.
+
+Example:
+
+Channel 1 | gap | Channel 2 | gap | Channel 3 | gap | Channel 4
+
+
+The timing position of each pulse represents the value of that channel.
+
 
 Advantages:
 
--   Reduced wiring compared to PWM
+- Requires only one signal wire for multiple channels
+- Reduces wiring compared to PWM
+- Simpler than multiple PWM connections
+
 
 Disadvantages:
 
--   Older technology
--   Lower performance compared to modern digital protocols
+- Older technology compared to modern digital protocols
+- More sensitive to timing errors
+- Lower update rates compared to modern serial protocols
+
+
+---
+
+## PWM/PPM Compatibility Issue
+
+Modern flight controllers such as Pixhawk 6C Mini generally prefer digital communication protocols such as:
+
+- CRSF
+- SBUS
+- MAVLink
+- CAN
+
+
+PWM and PPM are older signal formats and cannot directly communicate with UART-based digital ports.
+
+For example:
+
+PWM/PPM receiver output:
+
+Analog timing signals
+
+↓
+
+Requires conversion
+
+↓
+
+Pixhawk digital UART input
+
+
+Therefore, the selected ExpressLRS receiver uses CRSF UART instead of PWM or PPM because it provides:
+
+- Higher update rate
+- Lower latency
+- Bidirectional communication
+- Direct Pixhawk compatibility
 
 ------------------------------------------------------------------------
 
