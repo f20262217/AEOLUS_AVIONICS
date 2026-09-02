@@ -55,7 +55,7 @@ Advantages:
 
 - Lightweight
 - Good thrust-to-weight ratio
-- Compatible with existing S500 V2 setup
+- Compatible with existing S675 V2 setup
 - Easy ESC matching
 
 Limitations:
@@ -194,7 +194,7 @@ Disadvantages:
 
 # 7. Recommended Alternative
 
-For the current S500 V2 platform:
+For the current S675 V2 platform:
 
 ## Best drop-in alternative:
 
