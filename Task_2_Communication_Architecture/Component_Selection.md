@@ -2,9 +2,6 @@
 
 ## Overview
 
-This document explains the selection of communication components for the
-autonomous drone platform.
-
 The communication architecture consists of:
 
 -   RC system for pilot control
