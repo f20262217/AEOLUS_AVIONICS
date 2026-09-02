@@ -43,12 +43,12 @@ telemetry feedback
 
 The receiver connects to a Pixhawk UART port.
 
-  ExpressLRS Receiver   Pixhawk 6C Mini
-  --------------------- -----------------
-  TX                    RX
-  RX                    TX
-  5V                    5V
-  GND                   GND
+  ExpressLRS Receiver  ->   Pixhawk 6C Mini
+ 
+            TX         ->         RX
+            RX         ->         TX
+            5V         ->         5V
+            GND        ->         GND
 
 ## Power Source
 
