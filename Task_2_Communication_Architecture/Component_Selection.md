@@ -135,15 +135,7 @@ For example:
 
 PWM/PPM receiver output:
 
-Analog timing signals
-
-↓
-
-Requires conversion
-
-↓
-
-Pixhawk digital UART input
+Analog timing signals -> Requires conversion -> Pixhawk digital UART input
 
 
 Therefore, the selected ExpressLRS receiver uses CRSF UART instead of PWM or PPM because it provides:
@@ -214,23 +206,7 @@ it compatible with modern flight controllers.
 
 Architecture:
 
-RadioMaster TX16S
-
-↓
-
-2.4GHz ExpressLRS Link
-
-↓
-
-RP3 ExpressLRS Receiver
-
-↓
-
-CRSF UART
-
-↓
-
-Pixhawk 6C Mini
+RadioMaster TX16S -> 2.4GHz ExpressLRS Link -> RP3 ExpressLRS Receiver -> CRSF UART -> Pixhawk 6C Mini
 
 ------------------------------------------------------------------------
 
@@ -320,19 +296,7 @@ The Holybro SiK Telemetry Radio was selected because:
 
 Architecture:
 
-Pixhawk 6C Mini
-
-↓
-
-MAVLink UART
-
-↓
-
-SiK Telemetry Radio
-
-↓
-
-Ground Station
+Pixhawk 6C Mini -> MAVLink UART -> SiK Telemetry Radio -> Ground Station
 
 ------------------------------------------------------------------------
 
@@ -477,7 +441,7 @@ Protocol:
 
 Typical range:
 
-Approximately 10 km maximum under ideal conditions with compatible DJI goggles.
+Approximately 5-10 km maximum under ideal conditions with compatible DJI goggles.
 
 
 Actual range depends on:
@@ -498,7 +462,7 @@ The digital video system was selected because HD video quality is more important
 
 |System|Component|Protocol|Approximate Range|Purpose|
 |-|-|-|-|-|
-|RC Control|RadioMaster TX16S + RP3 ExpressLRS|CRSF|10-30 km|Pilot control and emergency override|
+|RC Control|RadioMaster TX16S + RP3 ExpressLRS|CRSF|2-5km|Pilot control and emergency override|
 |Telemetry|Holybro SiK Telemetry V3|MAVLink|1-3 km|Drone monitoring and mission communication|
 |Video|DJI O3 Air Unit|Digital 5.8GHz Link|Up to 10 km|Live FPV video|
 
