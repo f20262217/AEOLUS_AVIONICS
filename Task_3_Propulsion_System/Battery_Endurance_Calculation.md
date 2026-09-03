@@ -43,6 +43,12 @@ Therefore:
 
 This voltage is suitable for the 2216-920KV motor and 1045 propeller combination.
 
+The battery can theoretically provide:
+
+Maximum discharge current = 202.5A
+
+This is significantly higher than the expected motor current requirement, providing sufficient current headroom.
+
 ---
 
 # 3. Battery Energy Calculation
