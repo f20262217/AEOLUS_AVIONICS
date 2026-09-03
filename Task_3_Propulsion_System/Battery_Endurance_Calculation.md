@@ -15,8 +15,8 @@ The selected battery is:
 | Battery Type | LiPo |
 | Configuration | 4S |
 | Voltage | 14.8V |
-| Capacity | 5000mAh |
-| Capacity in Ah | 5Ah |
+| Capacity | 6750mAh |
+| Capacity in Ah | 6.75Ah |
 | C Rating | 30C |
 
 ---
@@ -56,20 +56,20 @@ Energy = Voltage × Capacity
 The battery capacity is:
 
 ```
-5000mAh = 5Ah
+6750mAh = 6.75Ah
 ```
 
 Therefore:
 
 ```
-Energy = 14.8 × 5
+Energy = 14.8 × 6.75
 
-Energy = 74Wh
+Energy = 99.9Wh
 ```
 
 Total battery energy:
 
-**74Wh**
+**99.9Wh**
 
 ---
 
@@ -82,14 +82,14 @@ A safe usable capacity of 80% is considered.
 ```
 Usable energy = Total energy × 0.8
 
-Usable energy = 74 × 0.8
+Usable energy = 99.9 × 0.8
 
-Usable energy = 59.2Wh
+Usable energy = 79.9Wh
 ```
 
 Available flight energy:
 
-**59.2Wh**
+**79.9Wh**
 
 ---
 
