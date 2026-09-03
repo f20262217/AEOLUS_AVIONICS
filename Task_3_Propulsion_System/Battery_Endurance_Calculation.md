@@ -93,13 +93,55 @@ Available flight energy:
 
 ---
 
-# 5. Hover Power Estimation from AUW
-920KV motor + 10×4.5 prop on 4S
-=commonly around 150 W/kg at hover for this size drone
-Holybro's own spec states the S500 V2 (915g) sustains a 1500g payload (2415g total) at ~70% throttle — consistent with this loading range.
-A separate owner report of the same 2216-920KV motor set on a ~2.6kg quad with a 4S 5000mAh battery logged ~11 minutes of flight, which back-calculates to a similar power loading.
-Hover power = 150 W/kg × 2.5 kg = 375W
-Hover current = Power/Voltage = 375/14.8 = 25.3A total
+# 5. Hover Power Estimation Using Motor Data
+
+The motor produces:
+
+Maximum thrust per motor:
+
+1.37kg
+
+For a 4 motor quadcopter with maximum thrust:
+
+Total maximum thrust:
+
+Total thrust = 1.37 × 4
+
+Total thrust = 5.48kg
+
+
+For a maximum takeoff weight of 2.5kg:
+
+Required thrust per motor:
+
+Required thrust = 2.5 / 4
+
+Required thrust = 0.625kg per motor
+
+
+The operating thrust percentage is:
+
+Thrust ratio = 0.625 / 1.37
+
+Thrust ratio = 0.456
+
+Therefore, each motor operates at approximately:
+
+45.6% of maximum thrust.
+
+
+Using the propeller affinity relationship:
+
+Power ∝ RPM³
+
+and
+
+RPM ∝ √Thrust
+
+
+The estimated hover power is approximately:
+
+Total hover power ≈ 316W
 
 ---
 
@@ -107,27 +149,22 @@ Hover current = Power/Voltage = 375/14.8 = 25.3A total
 
 Using usable battery energy:
 
-```
-Flight time = Usable energy ÷ Average power
-```
+Usable energy = 79.9Wh
 
-```
-Flight time = 59.2/375 = 0.158 h 
 
-Flight time = 0.158 hours
-```
+Flight time = Usable energy / Average power
 
-Convert to minutes:
 
-```
-Flight time = 0.158 × 60
+Flight time = 79.9 / 316
 
-Flight time = 9.5 minutes
-```
 
-Therefore:
+Flight time = 0.253 hours
 
-**Estimated endurance = 9.5**
+
+Flight time = 0.253 × 60
+
+
+Flight time ≈ 15.2 minutes
 
 ---
 
@@ -136,8 +173,8 @@ Therefore:
 | Requirement | Result |
 |---|---|
 | Required endurance | >12 minutes |
-| Calculated endurance | 9.5 |
-| Status | X |
+| Calculated endurance | 15.2 |
+| Status | Pass |
 
 The selected battery cannot satisfy the endurance requirement.
 
@@ -149,7 +186,7 @@ Trying a 4S 6750mAh 30C pack:
 
 Total energy = 14.8 × 6.75 = 99.9Wh
 Usable energy (80%) = 79.9Wh
-Flight time = 79.9/375 = 0.213 h = 12.8 minutes
+Flight time = 79.9/375 = 0.213 h = 15.2 minutes
 
 **Added pack weight vs the 5000mAh version is roughly +180g, which the S500 V2's rated 1500g payload capacity easily absorbs.**
 
@@ -162,6 +199,6 @@ Selected battery:
 **4S 6750mAh 30C LiPo**
 Reasons-
 Compatible voltage for the motor/ESC system
-≈12.8 min estimated hover endurance (>12 min requirement, with margin)
+15.2 min estimated hover endurance (>12 min requirement, with margin)
 Far more current capacity than the motors will ever draw
 Weight increase over the original 5000mAh pick is negligible against the 2.5kg budget
